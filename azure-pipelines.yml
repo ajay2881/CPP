@@ -16,9 +16,12 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your commands here
-      
-      echo 'Hello world'
+      wget https://github.com/zricethezav/gitleaks/releases/download/v7.2.1/gitleaks-linux-amd64
+         mv gitleaks-linux-amd64 gitleaks
+         chmod +x gitleaks
+         sudo mv gitleaks /usr/local/bin/
+         gitleaks --version
+         gitleaks --path=. --config-path=./gitleaks-back.toml --format=JSON --report=./scan.json --leaks-exit-code=0
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
