@@ -17,11 +17,11 @@ steps:
     targetType: 'inline'
     script: |
       wget https://github.com/zricethezav/gitleaks/releases/download/v7.2.1/gitleaks-linux-amd64
-         mv gitleaks-linux-amd64 gitleaks
-         chmod +x gitleaks
-         sudo mv gitleaks /usr/local/bin/
-         gitleaks --version
-       gitleaks --repo-path=. --config=.mysetting.toml --verbose --pretty --redact
+      mv gitleaks-linux-amd64 gitleaks
+      chmod +x gitleaks
+      sudo mv gitleaks /usr/local/bin/
+      gitleaks --version
+      gitleaks --path=. --config-path=./mysetting.toml --format=JSON --report=./scan.json --leaks-exit-code=0
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
