@@ -21,7 +21,7 @@ steps:
          chmod +x gitleaks
          sudo mv gitleaks /usr/local/bin/
          gitleaks --version
-         gitleaks --path=. --config-path=.gitleaks.toml --format=JSON --report=./scan.json --leaks-exit-code=0
+         gitleaks --path=. --config-path=.mygitleak.toml --format=JSON --report=./scan.json --leaks-exit-code=0
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
