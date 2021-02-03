@@ -1,0 +1,3 @@
+password: mypassword
+apikey: apisakjkfbas
+api token=jsbfasbfabsfmsa1221
