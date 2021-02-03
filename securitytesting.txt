@@ -1,0 +1,3 @@
+password: mypassword
+key=mykey
+subscription=6242vnmxcbhfa7
