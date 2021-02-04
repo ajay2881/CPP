@@ -21,7 +21,7 @@ steps:
       chmod +x gitleaks
       sudo mv gitleaks /usr/local/bin/
       gitleaks --version
-      gitleaks --path=. --config-path=./mysetting.toml  --commit= latest  --verbose
+      gitleaks --path=. --config-path=./mysetting.toml  --commit=latest  --verbose
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
