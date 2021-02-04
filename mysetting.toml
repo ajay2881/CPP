@@ -156,7 +156,6 @@ title = "gitleaks config"
 		    '''(?i)(.{0,20})?['"][0-9a-f]{32}-us[0-9]{1,2}['"]''',
 		    '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'''
 		]
-		files = ['''*.html''']
 
 [[rules]]
 	description = "High Entropy"
@@ -192,4 +191,4 @@ title = "gitleaks config"
 # Global allowlist
 [allowlist]
 	description = "image allowlists"
-	files = ['''(.*?)(jpg|gif|doc|pdf|bin)$''']
+	files = ['''(.*?)(jpg|gif|doc|pdf|bin|html)$''']
