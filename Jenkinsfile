@@ -1,20 +1,35 @@
-pipeline {
+	pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Prod Deploy') {
+            when {
+                branch 'master'
+            }
             steps {
-                echo 'Building..'
+                
+                input message: 'Are you sure you want to deploy to prod (Click "Proceed" to continue)'
+				echo 'Prod deployed'
+                
             }
         }
-        stage('Test') {
+        stage('Dev Deploy') {
+            when {
+                branch 'dev'
+            }
             steps {
-                echo 'Testing..'
+               
+				echo 'Dev deployed'
             }
         }
-        stage('Deploy') {
+		
+		 stage('UAT Deploy') {
+            when {
+                branch 'uat'
+            }
             steps {
-                echo 'Deploying....'
+                input message: 'Are you sure you want to deploy to UAT (Click "Proceed" to continue)'
+				echo 'UAT deployed'
             }
         }
     }
