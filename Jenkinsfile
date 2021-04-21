@@ -1,36 +1,17 @@
-	pipeline {
-    agent any
-
-    stages {
-        stage('Prod Deploy') {
-            when {
-                branch 'master'
-            }
-            steps {
-                
-                input message: 'Are you sure you want to deploy to prod (Click "Proceed" to continue)'
-				echo 'Prod deployed'
-                
-            }
-        }
-        stage('Dev Deploy') {
-            when {
-                branch 'dev'
-            }
-            steps {
-               
-				echo 'Dev deployed'
-            }
-        }
+#!groovy
+import groovy.json.JsonSlurperClassic
+node {
+  
+    def BRANCH_NAME = env.BRANCH_NAME    
+   
+	    stage('checkout source') {
+        		// when running in multi-branch job, one must issue this command
+        		checkout scm
+	    }      
+ 	
+       		if (env.BRANCH_NAME == "Dev")  {
+			print "hi from dev branch"
 		
-		 stage('UAT Deploy') {
-            when {
-                branch 'uat'
-            }
-            steps {
-                input message: 'Are you sure you want to deploy to UAT (Click "Proceed" to continue)'
-				echo 'UAT deployed'
-            }
-        }
-    }
-}
+		}
+	}
+
